@@ -11,7 +11,7 @@ dados = 'Este é um texto criptografado simetricamente'
 f = Fernet(chave)
 
 dadosCriptografados = f.encrypt(b"Este e um texto criptografado simetricamente")
-print(f'{dadosCriptografados}')
+print( "Dados criptografados"+f'{dadosCriptografados}')
 
 dadosDescriptografados = f.decrypt(dadosCriptografados)
-print(dadosDescriptografados)
+print("Dados descriptografados"+str(dadosDescriptografados))
