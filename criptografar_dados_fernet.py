@@ -13,4 +13,3 @@ class CriptografarDados:
     dadosCriptografados = f.encrypt(b"Este e um texto criptografado simetricamente")
     print(dadosCriptografados)
     
-    #print(f'{dadosCriptografados}') 
