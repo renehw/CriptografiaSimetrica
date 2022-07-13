@@ -1,16 +1,28 @@
 from cryptography.fernet import Fernet
 
-class CriptografarDados:    
-    file = open('chave.key', 'rb')
-    chave = file.read()
-    file.close
-    print("\n\n")
-    print(chave)
+class CriptografarDados:
+    def __init__(self) -> None:
+        pass
 
-    dados = 'Este é um texto criptografado simetricamente'
-    f = Fernet(chave)
+    def criptografar():
+        dadosCriptografados = f.encrypt(b"teste texto")
+        
+        file = open('chave.key', 'rb')
+        chave = file.read()
+        file.close
+        print("\n\n")
+        print(chave)
 
-    dadosCriptografados = f.encrypt(b"Este e um texto criptografado simetricamente")
-    print(dadosCriptografados)
+        f = Fernet(chave)
     
-    #print(f'{dadosCriptografados}') 
+        file = open('dadosCripto.text', 'wb')
+        file.write(dadosCriptografados)
+        file.close
+            
+        print(f'Dados Criptografados: {dadosCriptografados}')
+        
+        
+    
+    
+    
+    
