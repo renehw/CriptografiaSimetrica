@@ -1,4 +1,4 @@
-from CriptografiaSimetrica.criptografar_dados_AES import Cifrador
+from criptografar_dados_AES import Cifrador
 from descriptografar_dados_AES import Decifrador
 
 cypher = Cifrador()
