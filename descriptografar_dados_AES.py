@@ -8,7 +8,8 @@ class Decifrador:
         pass
     
     
-    def descriptografar(self,textoCriptografado,key):
+    def decryptografar(self,textoCriptografado,key):
+            
             cipher = Cipher(algorithms.AES(key), modes.CBC(b"\x00" * 16))
             decryptor = cipher.decryptor()
             decryp = decryptor.update(textoCriptografado) + decryptor.finalize()
