@@ -1,5 +1,6 @@
 import os
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from Crypto.Cipher import Blowfish
 
 
 class Cifrador:
@@ -9,16 +10,19 @@ class Cifrador:
     
     def criptografar(self):
         key = os.urandom(32)  #substituir por chave lida do arquivo  
-        file = open('AES.key', 'wb')
+        file = open('BLOWFISH.key', 'wb')
         file.write(key)
         file.close     
-       
-        cipher = Cipher(algorithms.AES(key), modes.CBC(b"\x00" * 16))
+        
+        cipher = Cipher(algorithms.Blowfish(key), modes.CBC(b"\x00" * 8))
         encryptor = cipher.encryptor()
+        
         ct = encryptor.update(b"a secret mensage") + encryptor.finalize()
-        file = open('AES-content.txt','wb')
+        file = open('BLOWFISH-content.txt','wb')
         file.write(ct)
         file.close
         return ct
+    
+    
     
     

@@ -1,12 +1,12 @@
-from criptografar_dados_AES import Cifrador
-from descriptografar_dados_AES import Decifrador
+from criptografar_dados_BLOWFISH import Cifrador
+from descriptografar_dados_BLOWFISH import Decifrador
 
 def lerChave():
-    file = open('AES.key', 'rb')
+    file = open('BLOWFISH.key', 'rb')
     return file.readlines()
 
 def lerConteudo():
-    file = open('AES-content.txt', 'rb')
+    file = open('BLOWFISH-content.txt', 'rb')
     return file.readlines()
     
 

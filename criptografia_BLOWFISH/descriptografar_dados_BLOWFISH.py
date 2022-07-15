@@ -10,7 +10,7 @@ class Decifrador:
     
     def decryptografar(self,textoCriptografado,key):
             
-            cipher = Cipher(algorithms.AES(key), modes.CBC(b"\x00" * 16))
+            cipher = Cipher(algorithms.Blowfish(key), modes.CBC(b"\x00" * 8))
             decryptor = cipher.decryptor()
             decryp = decryptor.update(textoCriptografado) + decryptor.finalize()
             return decryp
