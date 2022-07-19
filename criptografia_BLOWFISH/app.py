@@ -10,10 +10,10 @@ def lerConteudo():
     return file.readlines()
     
 
-def criptografar():
+def criptografar(texto):
     cypher = Cifrador()
-    textocripto = cypher.criptografar() 
-    print("\n\n")
+    textocripto = cypher.criptografar(texto) 
+    print("\n")
     print("Texto Criptografado: ")
     print(textocripto)
     return textocripto
@@ -26,10 +26,14 @@ def decryptografar(textocripto,key):
     print("Texto Descriptografado")
     print(textoPuro)
 
-# inicio 
-criptografar() #gera um novo arquivo cifrado e uma nova chave
-# comentar funcao acima para utilizar a mesma chave para decifrar
 
+textoPuro = input('Texto a ser crifrado:')
+
+texto= bytes(textoPuro, 'utf-8')
+# inicio 
+criptografar(texto) #gera um novo arquivo cifrado e uma nova chave
+# comentar funcao acima para utilizar a mesma chave para decifrar
+print("\n")
 criptoList = lerConteudo()
 textoCripto = criptoList[0]
 

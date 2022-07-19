@@ -13,4 +13,5 @@ class Decifrador:
             cipher = Cipher(algorithms.Blowfish(key), modes.CBC(b"\x00" * 8))
             decryptor = cipher.decryptor()
             decryp = decryptor.update(textoCriptografado) + decryptor.finalize()
+            decryp = decryp.replace(b'\x00', b'')
             return decryp
