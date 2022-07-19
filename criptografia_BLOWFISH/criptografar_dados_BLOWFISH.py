@@ -1,6 +1,5 @@
 import os
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from Crypto.Cipher import Blowfish
 
 
 class Cifrador:
