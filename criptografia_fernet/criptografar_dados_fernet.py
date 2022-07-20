@@ -4,27 +4,18 @@ class CriptografarDados:
     def __init__(self) -> None:
         pass
     
-    def criptografar():
-        file = open('../chave.key', 'rb')
+    def criptografar(self, texto):
+        file = open('chave.key', 'rb')
         chave = file.read()
         file.close
-        print("\n\n")
-        print(chave)
 
         f = Fernet(chave)
-        
-        dadosCriptografados = f.encrypt(b"Felipe e mala")
+        b = bytes(texto, 'utf-8')
+        dadosCriptografados = f.encrypt(b)
 
-        file = open('../dadosCripto.text', 'wb')
+        file = open('dadosCripto.text', 'wb')
         file.write(dadosCriptografados)
         file.close
         
-        print(f'Dados Criptografados: {dadosCriptografados}')
-        
-    criptografar()
-        
-        
-    
-    
-    
+        return dadosCriptografados
     

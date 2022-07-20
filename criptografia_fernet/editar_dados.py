@@ -2,11 +2,15 @@
 from descriptografar_dados import DescriptografarDados
 
 class EditarDados:
-    teste = DescriptografarDados()
+    def __init__(self) -> None:
+        pass
     
-    file = open('../dadosCripto.text', 'rb')
-    dadosCriptografados = file.read()
-    file.close
+    def editarDados(self):
+        teste = DescriptografarDados()
     
-    dados = teste.descriptografar(dadosCriptografados)
-    print(dados)
+        file = open('dadosCripto.text', 'rb')
+        dadosCriptografados = file.read()
+        file.close
+        
+        dados = teste.descriptografar(dadosCriptografados)
+        return dados

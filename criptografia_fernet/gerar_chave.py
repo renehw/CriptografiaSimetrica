@@ -1,11 +1,15 @@
 from cryptography.fernet import Fernet
 
-chave = Fernet.generate_key()
-print(chave)
-
-file = open('../chave.key', 'wb')
-file.write(chave)
-file.close
-
-# dadosDescriptografados = f.decrypt(dadosCriptografados)
-# print(dadosDescriptografados)
+class GenerateKey:
+    def __init__(self) -> None:
+        pass
+    
+    def gerarChave(self):
+        try:
+            chave = Fernet.generate_key()
+            file = open('chave.key', 'wb')
+            file.write(chave)
+            file.close
+            print('Chave gravada com sucesso')
+        except:
+            print('Não foi possivel gravar sua chave, tente novamente.')
